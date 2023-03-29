@@ -2,7 +2,7 @@
  * @Author: Donald duck tang5722917@163.com
  * @Date: 2023-03-27 19:15:06
  * @LastEditors: Donald duck tang5722917@163.com
- * @LastEditTime: 2023-03-29 19:11:44
+ * @LastEditTime: 2023-03-29 19:24:09
  * @FilePath: \mysticism-mud-doc\Mud教程\Mudcore玩家心跳动作框架解析.md
  * @Description:
  * Copyright (c) 2023 by Donald duck email: tang5722917@163.com, All Rights Reserved.
@@ -84,4 +84,6 @@ void enter_world(object ob, object user)
 但如果你直接写`load_object(PATH "test")`它同样会报错，因为`start_condition`第一个参数定义是string，而load_object返回的是object,  
 虽然string能隐式转换为object，但编译时driver的类型检查无法通过。  
 所以只能在外面套一个file_name() ╮(╯-╰)╭  
-[执行成果]: http://static.runoob.com/images/runoob-logo.png
+执行结果：  
+![运行结果](https://github.com/tang5722917/mysticism-mud-doc/blob/github/pic/1/mudcore_condition.png "title")  
+这里只涉及事件启动`start_condition`，在`condition.c`还定义心跳事件的其他控制函数，比如移除状态`stop_condition`,改变状态时间`change_condition_time`等等。  
